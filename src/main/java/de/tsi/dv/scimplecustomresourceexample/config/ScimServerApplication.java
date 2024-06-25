@@ -1,7 +1,6 @@
 package de.tsi.dv.scimplecustomresourceexample.config;
 
-import de.tsi.dv.scimplecustomresourceexample.models.ScimCustomUser;
-import jakarta.ws.rs.ApplicationPath;
+import de.tsi.dv.scimplecustomresourceexample.rest.ScimCustomUserResource;
 import jakarta.ws.rs.core.Application;
 import org.apache.directory.scim.server.rest.ScimResourceHelper;
 
@@ -12,7 +11,7 @@ public class ScimServerApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         Set<Class<?>> classes = new HashSet<>(ScimResourceHelper.scimpleFeatureAndResourceClasses());
-        classes.add(ScimCustomUser.class);
+        classes.add(ScimCustomUserResource.class);
         return classes;
     }
 }
